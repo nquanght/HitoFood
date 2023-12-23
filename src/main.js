@@ -1,5 +1,8 @@
 import './assets/main.css'
 
+// import external plugins
+import '@/plugins/bootstrap'
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
