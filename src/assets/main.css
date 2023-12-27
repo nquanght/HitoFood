@@ -1,4 +1,9 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.fs-price {
+  font-size: 13px;
 }
