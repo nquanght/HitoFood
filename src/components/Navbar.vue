@@ -62,4 +62,10 @@ const route = useRoute()
 .router-link-active {
   color: red;
 }
+
+/*.sticky-nav {*/
+/*  position: sticky;*/
+/*  top: 0;*/
+/*  z-index: 100;*/
+/*}*/
 </style>

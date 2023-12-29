@@ -72,46 +72,7 @@
           </div>
         </div>
 
-        <div class="col-sm-4 mb-3">
-          <div class="card">
-            <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text fw-bold">Gà rán KFC</p>
-              <div class="fs-price d-flex justify-content-between">
-                <div class="fw-bold">49.000 đ</div>
-                <div class="btn-add">+</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4 mb-3">
-          <div class="card">
-            <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text fw-bold">Gà rán KFC</p>
-              <div class="fs-price d-flex justify-content-between">
-                <div class="fw-bold">49.000 đ</div>
-                <div class="btn-add">+</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4 mb-3">
-          <div class="card">
-            <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text fw-bold">Gà rán KFC</p>
-              <div class="fs-price d-flex justify-content-between">
-                <div class="fw-bold">49.000 đ</div>
-                <div class="btn-add">+</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4 mb-3">
+        <div class="col-sm-4 mb-3" v-for="number in 30">
           <div class="card">
             <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -135,6 +96,9 @@
 </template>
 
 <script setup>
+
+import {onMounted} from "vue";
+
 </script>
 
 <style scoped>
