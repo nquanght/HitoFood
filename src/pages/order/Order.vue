@@ -37,14 +37,9 @@
     </div>
   </div>
 
-  <div class="row mb-3">
-    <div class="col-sm-2 fw-bold fs-5">Category</div>
-    <div class="col-sm-7 fw-bold fs-5">Discount meal</div>
-    <div class="col-sm-3 fw-bold fs-5">Ordered</div>
-  </div>
-
   <div class="row">
     <div class="col-sm-2">
+      <div class="fw-bold fs-5 mb-3">Category</div>
       <div class="card px-3 py-2">
         <span class="my-1 py-1 px-2 bg-menu fw-bold rounded cursor-pointer">Món đang giảm</span>
         <span class="my-1 py-1 px-2 cursor-pointer">Combo rush hour</span>
@@ -53,8 +48,8 @@
       </div>
     </div>
     <div class="col-sm-7">
+      <div class="fw-bold fs-5 mb-3">Discount meal</div>
       <div class="row">
-
         <div class="col-sm-4 mb-3">
           <div class="card">
             <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
@@ -88,6 +83,7 @@
       </div>
     </div>
     <div class="col-sm-3">
+      <div class="fw-bold fs-5 mb-3">Ordered</div>
       <div class="card px-3 py-2">
         <span>gdfdfg</span>
       </div>
