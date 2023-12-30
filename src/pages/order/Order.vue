@@ -1,5 +1,5 @@
 <template>
-  <div class="card my-3">
+  <div class="card my-3 shadow-sm">
     <img src="../../assets/merchant_logo/shopeefood.png" class="img-fluid rounded-start mx-3 py-2" alt="" width="72" height="72">
     <div class="row g-0 pb-3">
       <div class="col-md-4">
@@ -38,9 +38,9 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-2" ref="stickyColumn">
       <div class="fw-bold fs-5 mb-3">Category</div>
-      <div class="card px-3 py-2">
+      <div class="card px-3 py-2 shadow-sm">
         <span class="my-1 py-1 px-2 bg-menu fw-bold rounded cursor-pointer">Món đang giảm</span>
         <span class="my-1 py-1 px-2 cursor-pointer">Combo rush hour</span>
         <span class="my-1 py-1 px-2 cursor-pointer">Món thêm</span>
@@ -49,10 +49,13 @@
     </div>
     <div class="col-sm-7">
       <div class="fw-bold fs-5 mb-3">Discount meal</div>
-      <div class="row">
+      <div class="row" id="card-dish">
         <div class="col-sm-4 mb-3">
-          <div class="card">
-            <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
+          <div class="card shadow-sm">
+            <div class="zoom-img-container">
+              <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
+            </div>
+
             <div class="card-body">
               <p class="card-text fw-bold">Gà rán KFC</p>
               <div class="fs-price d-flex justify-content-between">
@@ -68,8 +71,11 @@
         </div>
 
         <div class="col-sm-4 mb-3" v-for="number in 30">
-          <div class="card">
-            <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
+          <div class="card shadow-sm">
+            <div class="zoom-img-container">
+              <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
+            </div>
+
             <div class="card-body">
               <p class="card-text fw-bold">Gà rán KFC</p>
               <div class="fs-price d-flex justify-content-between">
@@ -79,22 +85,109 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <div class="col-sm-3">
       <div class="fw-bold fs-5 mb-3">Ordered</div>
-      <div class="card px-3 py-2">
+      <div class="card px-3 py-2 shadow-sm">
         <span>gdfdfg</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 sidebar-left">
+        <div class="fw-bold fs-5 mb-3">Category</div>
+        <div class="card px-3 py-2 shadow-sm">
+          <span class="my-1 py-1 px-2 bg-menu fw-bold rounded cursor-pointer">Món đang giảm</span>
+          <span class="my-1 py-1 px-2 cursor-pointer">Combo rush hour</span>
+          <span class="my-1 py-1 px-2 cursor-pointer">Món thêm</span>
+          <span class="my-1 py-1 px-2 cursor-pointer">Combo 1 gfdg fdgfdgfdgfd gfd gfdg</span>
+        </div>
+      </div>
+      <div class="col-sm-7 main-content">
+        <div class="fw-bold fs-5 mb-3">Discount meal</div>
+        <div class="row" id="card-dish">
+          <div class="col-sm-4 mb-3">
+            <div class="card shadow-sm">
+              <div class="zoom-img-container">
+                <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
+              </div>
+
+              <div class="card-body">
+                <p class="card-text fw-bold">Gà rán KFC</p>
+                <div class="fs-price d-flex justify-content-between">
+                  <div class="fw-bold">49.000 đ</div>
+                  <div class="btn-group" role="group" aria-label="Second group">
+                    <div class="btn-sm btn-minus">-</div>
+                    <div class="mx-3 fw-bold" style="line-height: 20px">2</div>
+                    <div class="btn-sm btn-add">+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 mb-3" v-for="number in 30">
+            <div class="card shadow-sm">
+              <div class="zoom-img-container">
+                <img src="https://static.vinwonders.com/production/ga-ran-nha-trang-1.jpg" class="card-img-top" alt="...">
+              </div>
+
+              <div class="card-body">
+                <p class="card-text fw-bold">Gà rán KFC</p>
+                <div class="fs-price d-flex justify-content-between">
+                  <div class="fw-bold">49.000 đ</div>
+                  <div class="btn-add">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 sidebar-right">
+        <div class="fw-bold fs-5 mb-3">Ordered</div>
+        <div class="card px-3 py-2 shadow-sm">
+          <span>gdfdfg</span>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import {ref, onMounted} from "vue";
 
-import {onMounted} from "vue";
-
+// const stickyColumn = ref(null)
+onMounted(() => {
+  // window.addEventListener('scroll', () => {
+  //   const documentHeight = Math.max(
+  //       document.body.scrollHeight, document.documentElement.scrollHeight,
+  //       document.body.offsetHeight, document.documentElement.offsetHeight,
+  //       document.body.clientHeight, document.documentElement.clientHeight
+  //   );
+  //
+  //   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  //   const scrollY = window.scrollY || window.pageYOffset;
+  //
+  //   // Tính phần trăm cuộn đã hoàn thành
+  //   const scrollPercent = (scrollY / (documentHeight - windowHeight)) * 100;
+  //
+  //   console.log('-----')
+  //   // console.log('Sticky column', stickyColumn.value.getBoundingClientRect())
+  //   const {left, right, top, bottom, height, width, x, y} = stickyColumn.value.getBoundingClientRect()
+  //   console.log('top', top)
+  //   console.log('bottom', bottom)
+  //   console.log('x', x)
+  //   console.log('y', y)
+  //   // console.log('Chiều cao toàn bộ trang:', documentHeight);
+  //   // console.log('Chiều cao cửa sổ:', windowHeight);
+  //   console.log('Vị trí cuộn (scrollY):', scrollY);
+  //   // console.log('Phần trăm cuộn:', scrollPercent.toFixed(2) + '%');
+  //   console.log('-----')
+  // })
+})
 </script>
 
 <style scoped>
@@ -135,4 +228,43 @@ import {onMounted} from "vue";
   background-color: dimgray;
   border-radius: 5px;
 }
+
+/* For zoom image when hover*/
+.zoom-img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.zoom-img-container img {
+  transition: transform 0.3s ease;
+}
+
+.zoom-img-container:hover img {
+  transform: scale(1.2);
+}
+
+/*For test sticky column*/
+.sidebar-left, .sidebar-right {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.main-content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.main-content::-webkit-scrollbar {
+  /*width: 12px;*/
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.main-content:hover::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
 </style>
