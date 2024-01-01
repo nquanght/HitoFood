@@ -175,14 +175,23 @@ const configHeader = {
 
 const getData = async () => {
   try {
-    const res = await axios.get(url, configHeader)
-    dataForm.value = res.data.reply.menu_infos
-    dataForm.value.forEach((item, index) => {
-      item.dish_name_hyphen = convertString(item.dish_type_name)
-      if(index === 0){
-        categoryActive.value = item.dish_name_hyphen
+    await axios({
+      baseURL: url,
+      method: 'get',
+      headers: configHeader.headers
+    }).then(res => {
+      if(res && res.data.reply.menu_infos.length > 0){
+        dataForm.value = res.data.reply.menu_infos
+        dataForm.value.forEach((item, index) => {
+          item.dish_name_hyphen = convertString(item.dish_type_name)
+          if(index === 0){
+            categoryActive.value = item.dish_name_hyphen
+          }
+        })
       }
+
     })
+
   } catch (error) {
     console.log(error)
   }
