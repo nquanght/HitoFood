@@ -11,6 +11,6 @@ import NavBar from '@/components/Navbar.vue'
 
 <style scoped>
 .container {
-  width: 70%;
+  width: 80%;
 }
 </style>
