@@ -10,7 +10,7 @@
         <li class="nav-item" v-for="navBar in listNavBar">
           <router-link
               :to="navBar.path"
-              class="nav-link"
+              class="nav-link fw-bold"
               :active="route.path === navBar.path"
               aria-current="page"
           >
