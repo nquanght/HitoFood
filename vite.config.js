@@ -17,7 +17,8 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'https://gappapi.deliverynow.vn',
-        changeOrigin: true,
+        changeOrigin: false,
+        secure: true,
         rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
     }
