@@ -148,7 +148,7 @@ const configHeader = {
   headers: {
     '34746531': "Ig/W@'dNfSM^/<tND*a731F.%D^g+=T]$<:,Ng-t1ROadA<ln;iVa?4U.\\l%695/phu$5X1d\"D\\E7F\"7o(Kq8R.;jeSS@o'GY9,%fuG=(5gPt8K[TnPhm1SJ)^Z&\"]i_<O+L:PSk6N=V;'*?OW@p6\\lW<[^\\mM\\K$EKtIcYei-<TDK.@1Z=NZ^deI*$Z.P@]PS8)",
     '1e29077c': "5<KUlGBY^MiTP;E''A(M('GR3",
-    'authority': 'hito-ordering.netlify.app',
+    // 'authority': 'hito-ordering.netlify.app',
     'accept': 'application/json, text/plain, */*',
     'accept-language': 'en-US,en;q=0.9,vi;q=0.8',
     'b95db4da': "<k,i?r+A6q794AI7>_$i?i_ZM",
