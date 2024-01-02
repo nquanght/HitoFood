@@ -138,7 +138,7 @@ import {ref, onMounted} from "vue";
 import axios from "axios";
 import convertStringToUrl from "@/composables/common/convertStringToUrl.js";
 
-const url = 'https://hito-ordering.netlify.app/api/dish/get_delivery_dishes?id_type=2&request_id=309258&version=123'
+const url = '/api/dish/get_delivery_dishes?id_type=2&request_id=309258&version=123'
 
 const dataForm = ref([])
 const categoryActive = ref(null)
@@ -180,6 +180,7 @@ const getData = async () => {
       method: 'get',
       headers: configHeader.headers
     }).then(res => {
+      console.log('direct')
       if(res && res.data.reply.menu_infos.length > 0){
         dataForm.value = res.data.reply.menu_infos
         dataForm.value.forEach((item, index) => {
