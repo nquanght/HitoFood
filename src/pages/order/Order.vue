@@ -153,6 +153,7 @@ const configHeader = {
     'accept': 'application/json, text/plain, */*',
     'accept-language': 'en-US,en;q=0.9,vi;q=0.8',
     'b95db4da': "<k,i?r+A6q794AI7>_$i?i_ZM",
+    'Content-Type': 'application/json',
     // 'origin': 'https://shopeefood.vn',
     // 'referer': 'https://shopeefood.vn/',
     // 'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
