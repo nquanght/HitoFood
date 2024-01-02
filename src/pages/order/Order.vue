@@ -138,7 +138,8 @@ import {ref, onMounted} from "vue";
 import axios from "axios";
 import convertStringToUrl from "@/composables/common/convertStringToUrl.js";
 
-const url = '/api/dish/get_delivery_dishes?id_type=2&request_id=309258&version=123'
+const timestamp = new Date().getTime();
+const url = `/api/dish/get_delivery_dishes?id_type=2&request_id=309258&timestamp=${timestamp}`
 
 const dataForm = ref([])
 const categoryActive = ref(null)
@@ -169,7 +170,8 @@ const configHeader = {
     'x-foody-client-type': '1',
     'x-foody-client-version': '3.0.0',
     'x-sap-ri': 'ccdb616510ae97d358f6b53a655a8ff5dd39de4c1451481d',
-    'Cache-Control': 'no-store'
+    'Pragma': 'no-cache',
+    'Cache-Control': 'no-cache'
   },
   withCredentials: true
 }
