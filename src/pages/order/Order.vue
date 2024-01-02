@@ -169,8 +169,7 @@ const configHeader = {
     'x-foody-client-type': '1',
     'x-foody-client-version': '3.0.0',
     'x-sap-ri': 'ccdb616510ae97d358f6b53a655a8ff5dd39de4c1451481d',
-    'If-Modified-Since': undefined, // Bỏ trường If-Modified-Since
-    'If-None-Match': undefined,     // Bỏ trường If-None-Match (ETag)
+    'Cache-Control': 'no-cache'
   },
   withCredentials: true
 }
@@ -182,7 +181,6 @@ const getData = async () => {
       method: 'get',
       headers: configHeader.headers
     }).then(res => {
-      console.log('direct')
       if(res && res.data.reply.menu_infos.length > 0){
         dataForm.value = res.data.reply.menu_infos
         dataForm.value.forEach((item, index) => {
