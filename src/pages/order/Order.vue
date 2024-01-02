@@ -169,7 +169,7 @@ const configHeader = {
     'x-foody-client-type': '1',
     'x-foody-client-version': '3.0.0',
     'x-sap-ri': 'ccdb616510ae97d358f6b53a655a8ff5dd39de4c1451481d',
-    'Cache-Control': 'no-cache'
+    'Cache-Control': 'no-store'
   },
   withCredentials: true
 }
