@@ -199,6 +199,27 @@ const getData = async () => {
   } catch (error) {
     console.log(error)
   }
+
+  fetch(url, {
+  method: 'GET',
+  mode: 'cors',
+  headers: configHeader.headers
+  })
+  .then(response => response.json())
+  .then(data => {
+    if(data && data.data.reply.menu_infos.length > 0){
+        dataForm.value = data.data.reply.menu_infos
+        dataForm.value.forEach((item, index) => {
+          item.dish_name_hyphen = convertString(item.dish_type_name)
+          if(index === 0){
+            categoryActive.value = item.dish_name_hyphen
+          }
+        })
+      }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 }
 
 const scrollToSection = (element) => {

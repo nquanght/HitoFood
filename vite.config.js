@@ -18,11 +18,7 @@ export default defineConfig({
       '/api': {
         target: 'https://gappapi.deliverynow.vn',
         changeOrigin: true,
-        ws: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-        },
+        rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
     }
   }
