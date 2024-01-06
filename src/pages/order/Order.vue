@@ -138,53 +138,17 @@ import {ref, onMounted} from "vue";
 import axios from "axios";
 import convertStringToUrl from "@/composables/common/convertStringToUrl.js";
 
-const timestamp = new Date().getTime();
-const url = `/api/dish/get_delivery_dishes?id_type=2&request_id=309258&timestamp=${timestamp}`
+const url = `http://localhost:3000/api/get-order`
 
 const dataForm = ref([])
 const categoryActive = ref(null)
 const {convertString} = convertStringToUrl()
 
-const configHeader = {
-  headers: {
-    // '34746531': "Ig/W@'dNfSM^/<tND*a731F.%D^g+=T]$<:,Ng-t1ROadA<ln;iVa?4U.\\l%695/phu$5X1d\"D\\E7F\"7o(Kq8R.;jeSS@o'GY9,%fuG=(5gPt8K[TnPhm1SJ)^Z&\"]i_<O+L:PSk6N=V;'*?OW@p6\\lW<[^\\mM\\K$EKtIcYei-<TDK.@1Z=NZ^deI*$Z.P@]PS8)",
-    // '1e29077c': "5<KUlGBY^MiTP;E''A(M('GR3",
-    'authority': 'gappapi.deliverynow.vn',
-    'method': 'get',
-    'path': '/api/dish/get_delivery_dishes?id_type=2&request_id=309258',
-    'scheme': 'https',
-    'Accept': 'application/json, text/plain, */*',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'accept-language': 'en-US,en;q=0.9,vi;q=0.8',
-    // 'b95db4da': "<k,i?r+A6q794AI7>_$i?i_ZM",
-    // 'Content-Type': 'multipart/form-data',
-    'origin': 'https://shopeefood.vn',
-    'referer': 'https://shopeefood.vn/',
-    'sec-ch-ua': '"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': 'Windows',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'cross-site',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0',
-    'x-foody-access-token': 'a4f99e77b7c7460c5a1d4c81de7acb064238fa80b4cbf2add5c478037386ec459f799d1b02a5c34789bf0b7b7f76ab5110b15525f91d4e416de424757d4182f4',
-    'x-foody-api-version': '1',
-    'x-foody-app-type': '1004',
-    'x-foody-client-id': '',
-    'x-foody-client-language': 'vi',
-    'x-foody-client-type': '1',
-    'x-foody-client-version': '3.0.0',
-    'x-sap-ri': 'ccdb616510ae97d358f6b53a655a8ff5dd39de4c1451481d'
-  },
-  withCredentials: true
-}
-
 const getData = async () => {
   try {
     await axios({
       baseURL: url,
-      method: 'get',
-      headers: configHeader.headers
+      method: 'get'
     }).then(res => {
       if(res && res.data.reply.menu_infos.length > 0){
         dataForm.value = res.data.reply.menu_infos
@@ -201,27 +165,6 @@ const getData = async () => {
   } catch (error) {
     console.log(error)
   }
-
-  // fetch(url, {
-  // method: 'GET',
-  // mode: 'cors',
-  // headers: configHeader.headers
-  // })
-  // .then(response => response.json())
-  // .then(data => {
-  //   if(data && data.data.reply.menu_infos.length > 0){
-  //       dataForm.value = data.data.reply.menu_infos
-  //       dataForm.value.forEach((item, index) => {
-  //         item.dish_name_hyphen = convertString(item.dish_type_name)
-  //         if(index === 0){
-  //           categoryActive.value = item.dish_name_hyphen
-  //         }
-  //       })
-  //     }
-  // })
-  // .catch(error => {
-  //   console.error('Error:', error);
-  // });
 }
 
 const scrollToSection = (element) => {
