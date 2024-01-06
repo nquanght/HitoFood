@@ -138,7 +138,7 @@ import {ref, onMounted} from "vue";
 import axios from "axios";
 import convertStringToUrl from "@/composables/common/convertStringToUrl.js";
 
-const url = `http://localhost:3000/api/get-order`
+const url = `https://hito-ordering-service.onrender.com/api/get-order`
 
 const dataForm = ref([])
 const categoryActive = ref(null)
