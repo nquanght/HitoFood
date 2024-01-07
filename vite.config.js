@@ -13,13 +13,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://gappapi.deliverynow.vn',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/api'),
-      },
-    }
-  }
+  // server: {
+  //   proxy: {
+  //     '/api': {
+  //       target: 'https://gappapi.deliverynow.vn',
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/api/, '/api'),
+  //     },
+  //   }
+  // }
 })
